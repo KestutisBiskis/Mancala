@@ -11,7 +11,7 @@ public class Mancala {
     
 
     public Mancala(){
-        board = new int[]{4,4,4,4,4,4,0,4,4,4,4,4,4,0};
+        board = new int[]{4,4,4,4,4,4,0,4,4,4,4,4,0,0};
         comp_score = board[6];
         play_score = board[13];
         num_move = 1;
@@ -100,9 +100,10 @@ public class Mancala {
             board[j] += 1;
             end = j;
         }
-        if (end>=7 && end <= 12 && board[end]==1){
-            board[13]+=board[6-(end-6)];
-            board[6-(end-6)]=0;
+        if (end >= 7 && end <= 12 && board[end] == 1){
+            board[13] += board[6-(end-6)] + 1;
+            board[6-(end-6)] = 0;
+            board[end] = 0;
         }
 
 

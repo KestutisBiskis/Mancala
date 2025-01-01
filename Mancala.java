@@ -100,7 +100,14 @@ public class Mancala {
             board[j] += 1;
             end = j;
         }
+        if (end>=7 && end <= 12 && board[end]==1){
+            board[13]+=board[6-(end-6)];
+            board[6-(end-6)]=0;
+        }
+
+
         num_move++;
+
         if (end == mancala) {
             // player gets another turn
             num_move--;

@@ -4,14 +4,14 @@
 public class Mancala {
     //margerie taylor simpson
     // first half is computers side second half is players side
-    private int[] board;
+    private byte[] board;
     private int comp_score;
     private int play_score;
     private int num_move;
     
 
     public Mancala(){
-        board = new int[]{4,4,4,4,4,4,0,4,4,4,4,4,0,0};
+        board = new byte[]{4,4,4,4,4,0,0,4,4,4,4,4,4,0};
         comp_score = board[6];
         play_score = board[13];
         num_move = 1;
@@ -77,7 +77,7 @@ public class Mancala {
      * @param index index of players move
      * @return altered board after move was performed
      */
-    public int[] makeMove(int index){
+    public byte[] makeMove(int index){
         final int start = index + 1;
         final int beads = board[index];
         board[index] = 0;

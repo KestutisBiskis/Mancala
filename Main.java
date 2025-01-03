@@ -27,7 +27,7 @@ public class Main {
                 }
                 // AI move loop
                 
-            } while (!game.checkWin());
+            } while (!game.gameOver());
             game.printBoard();
             System.out.println("Game over!");
         }

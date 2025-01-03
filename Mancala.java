@@ -11,7 +11,7 @@ public class Mancala {
     
 
     public Mancala(){
-        board = new byte[]{4,4,4,4,4,0,0,4,4,4,4,4,4,0};
+        board = new byte[]{4,4,4,4,4,4,0,4,4,4,4,4,4,0};
         comp_score = board[6];
         play_score = board[13];
         num_move = 1;
@@ -100,19 +100,18 @@ public class Mancala {
             board[j] += 1;
             end = j;
         }
+        // capture
         if (end >= 7 && end <= 12 && board[end] == 1){
             board[13] += board[6-(end-6)] + 1;
             board[6-(end-6)] = 0;
             board[end] = 0;
         }
 
-
         num_move++;
-
+        // extra move
         if (end == mancala) {
             // player gets another turn
             num_move--;
-            System.out.println("Extra move!");
         }
 
         play_score = board[13];
@@ -125,14 +124,14 @@ public class Mancala {
      */
     public int AIMove(){
         comp_score = board[6];
-        return 1;
+        return 2;
     }
     
     /**
      * 
      * @return boolean, false if no one has won, true if someone won.
      */
-    public boolean checkWin(){
+    public boolean gameOver(){
         boolean first = true;
         boolean second = true;
         for (int i = 0; i < 6; i++) {

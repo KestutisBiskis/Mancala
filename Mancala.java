@@ -11,7 +11,7 @@ public class Mancala {
     
 
     public Mancala(){
-        board = new byte[]{4,4,4,4,4,4,0,4,4,4,4,4,4,0};
+        board = new byte[]{4,4,4,4,4,4,0,4,4,4,4,4,9,0};
         comp_score = board[6];
         play_score = board[13];
         num_move = 1;
@@ -124,7 +124,7 @@ public class Mancala {
      */
     public int AIMove(){
         comp_score = board[6];
-        return 2;
+        return 0;
     }
     
     /**
@@ -164,6 +164,18 @@ public class Mancala {
     }
 
     public void endGame() {
-        
+        int start = (board[0] == 0) ? 7 : 0;
+        int total = 0;
+        for (int i = start; i < start + 6; i++) {
+            total += board[i];
+            board[i] = 0;
+        }
+
+        if (start == 0) {
+            comp_score += total;
+        }
+        else {
+            play_score += total;
+        }
     }
 }

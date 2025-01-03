@@ -162,4 +162,8 @@ public class Mancala {
     public int getNum_move() {
         return this.num_move;
     }
+
+    public void endGame() {
+        
+    }
 }

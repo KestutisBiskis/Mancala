@@ -82,11 +82,14 @@ public class Mancala {
         final int beads = board[index];
         board[index] = 0;
         final int mancala;
+        final int skip;
         if (whosMove()){
             mancala = 13;
+            skip = 6;
         }
         else {
             mancala = 6;
+            skip = 13;
         }
         int end = 0;
         for (int i = start; i < start+beads; i++) {
@@ -95,6 +98,9 @@ public class Mancala {
             // return to begin of the array if the index exceeds the length
             if (i > 13) {
                 j = i % 14;
+            }
+            if (j == skip) {
+                continue;
             }
             // drop a bead in the well
             board[j] += 1;

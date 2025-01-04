@@ -92,7 +92,8 @@ public class Mancala {
             skip = 13;
         }
         int end = 0;
-        for (int i = start; i < start+beads; i++) {
+        int stop = start+beads;
+        for (int i = start; i < stop; i++) {
             // use j so editing it will still run the desired amount of times
             int j = i;
             // return to begin of the array if the index exceeds the length
@@ -100,6 +101,7 @@ public class Mancala {
                 j = i % 14;
             }
             if (j == skip) {
+                stop++;
                 continue;
             }
             // drop a bead in the well

@@ -1,6 +1,3 @@
-
-
-
 public class Mancala {
     //margerie taylor simpson
     // first half is computers side second half is players side

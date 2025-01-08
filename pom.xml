@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     
     <!-- Group, Artifact, and Version identifiers -->
-    <groupId>com.example</groupId>
-    <artifactId>your-project-name</artifactId>
+    <groupId>com.codestutis</groupId>
+    <artifactId>mancala</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <!-- Dependencies -->

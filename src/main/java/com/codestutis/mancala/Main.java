@@ -1,3 +1,5 @@
+package com.codestutis.mancala;
+
 import java.util.Scanner;
 
 public class Main {
